@@ -11,7 +11,7 @@ import org.apache.maven.project.MavenProject;
  * Module prints the module info (name, groupId, artifactId..etc)
  */
 @Mojo(name = "info", defaultPhase = LifecyclePhase.INITIALIZE)
-public class ModuleMojo extends AbstractMojo {
+public class ModuleInfoMojo extends AbstractMojo {
     /**
      * @parameter default-value="${project}"
      * @required
@@ -25,7 +25,6 @@ public class ModuleMojo extends AbstractMojo {
         getLog().info("------------------------------------------------------------------------");
         getLog().info(" MODULE INFO");
         getLog().info("------------------------------------------------------------------------");
-        getLog().info("[ROOT]\n" + getModuleInfo(mavenProject.getParent()));
         getLog().info("[MODULE]\n"+ getModuleInfo(mavenProject));
     }
 
@@ -36,6 +35,7 @@ public class ModuleMojo extends AbstractMojo {
         moduleBuilder.append("artifactId: " + mavenProject.getArtifactId() + "\n");
         moduleBuilder.append("groupId: " + mavenProject.getGroupId() + "\n");
         moduleBuilder.append("version: " + mavenProject.getVersion() + "\n");
+        moduleBuilder.append("hasParent: " + mavenProject.hasParent() + "\n");
         moduleBuilder.append(("dependency count: " + mavenProject.getDependencies().size()) + "\n");
         moduleBuilder.append(("modules count: " + mavenProject.getModules().size()) + "\n");
         moduleBuilder.append(("plugins count: " + mavenProject.getPluginArtifacts().size()) + "\n");
