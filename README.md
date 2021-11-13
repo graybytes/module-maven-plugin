@@ -11,12 +11,12 @@ maven module plugin for retrieving module meta data
 	<plugin>
 		<groupId>com.graybytes</groupId>
 		<artifactId>module-maven-plugin</artifactId>
-		<version>1.1.2</version>
+		<version>1.0</version>
 	</plugin>
 		
 ## Output: 
 ```
-[INFO] --- module-maven-plugin:1.1.2:info (default-cli) @ demo ---
+[INFO] --- module-maven-plugin:1.0:info (default-cli) @ demo ---
 [INFO] ------------------------------------------------------------------------
 [INFO]  MODULE INFO
 [INFO] ------------------------------------------------------------------------
