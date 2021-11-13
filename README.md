@@ -49,3 +49,4 @@ plugins count: 10
 ## Contributions: 
 1. Fork the repo and create a pull request. 
 2. Once approved and reviewed the PR will be merged. 
+3. Feedback and input as issues or enhancements are always welcome
