@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.io.File;
 
-public class ModuleMojoTest
+public class ModuleTreeMojoTest
     extends AbstractMojoTestCase {
     /**
      * {@inheritDoc}
@@ -29,10 +29,10 @@ public class ModuleMojoTest
      * @throws Exception if any
      */
     @Test
-    public void testMojoInfoGoal()
+    public void testMojoTreeGoal()
         throws Exception {
         File testPom = new File("target/test-classes/unit/maven-module-plugin/plugin-config.xml");
-        ModuleMojo mojo = (ModuleMojo) lookupEmptyMojo("info", testPom);
+        ModuleTreeMojo mojo = (ModuleTreeMojo) lookupEmptyMojo("tree", testPom);
         assertNotNull(mojo);
     }
 }
