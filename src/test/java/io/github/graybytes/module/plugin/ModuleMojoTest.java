@@ -1,4 +1,4 @@
-package com.graybytes.module.plugin;
+package io.github.graybytes.module.plugin;
 
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
 import org.junit.Test;
