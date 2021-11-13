@@ -6,6 +6,27 @@
     <name>module-maven-plugin project</name>
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
+    <url>https://github.com/graybytes/module-maven-plugin</url>
+    <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Asha Somayajular</name>
+      <email>somayajulaas@gmail.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/simpligility/ossrh-demo.git</connection>
+    <developerConnection>scm:git:ssh://github.com/graybytes/module-maven-plugin.git</developerConnection>
+    <url>https://github.com/graybytes/module-maven-plugin/tree/master</url>
+   </scm>
+    
     <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
