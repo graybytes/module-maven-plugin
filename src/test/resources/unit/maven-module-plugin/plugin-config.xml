@@ -1,0 +1,15 @@
+<project>
+    <groupId>com.graybytes</groupId>
+    <artifactId>maven-module-plugin</artifactId>
+    <modelVersion>1.0</modelVersion>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-module-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>target/test-harness/project-to-test</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
