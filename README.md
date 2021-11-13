@@ -9,7 +9,7 @@ maven module plugin for retrieving module meta data
 ## Steps to use the plugin: 
 	1. include pom plugin 
 	<plugin>
-		<groupId>com.graybytes</groupId>
+		<groupId>io.github.graybytes</groupId>
 		<artifactId>module-maven-plugin</artifactId>
 		<version>1.0</version>
 	</plugin>
