@@ -1,22 +1,21 @@
 # module-maven-plugin
 maven module plugin for retrieving module info
 
-**Steps to build the maven plugin:** 
+## Steps to build the maven plugin: 
 	1. clone the git repo. 
-	2. install Java 1.8 
 	3. set the Java version to 1.8 in your IDE (upgrade needed)
-	4. install maven (latest)
-	5. run mvn install 
+	5. execute mvn install 
 
-**Steps to use the plugin **
+## Steps to use the plugin: 
 	1. include pom plugin 
-		<plugin>
-				<groupId>com.graybytes</groupId>
-				<artifactId>module-maven-plugin</artifactId>
-				<version>1.1.2</version>
-		</plugin>
+	<plugin>
+		<groupId>com.graybytes</groupId>
+		<artifactId>module-maven-plugin</artifactId>
+		<version>1.1.2</version>
+	</plugin>
 		
-** Output: **
+## Output: 
+```
 [INFO] --- module-maven-plugin:1.1.2:info (default-cli) @ demo ---
 [INFO] ------------------------------------------------------------------------
 [INFO]  MODULE INFO
@@ -45,3 +44,8 @@ plugins count: 10
 [INFO] Total time:  0.287 s
 [INFO] Finished at: 2021-11-12T20:04:25-06:00
 [INFO] ------------------------------------------------------------------------
+```
+
+## Contributions: 
+1. Fork the repo and create a pull request. 
+2. Once approved and reviewed the PR will be merged. 
