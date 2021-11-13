@@ -1,5 +1,5 @@
 # module-maven-plugin
-maven module plugin for retrieving module info
+maven module plugin for retrieving module meta data
 
 ## Steps to build the maven plugin: 
 	1. clone the git repo. 
