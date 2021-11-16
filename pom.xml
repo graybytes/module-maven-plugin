@@ -4,6 +4,7 @@
     <groupId>io.github.graybytes</groupId>
     <artifactId>module-maven-plugin</artifactId>
     <name>module-maven-plugin project</name>
+    <name>Maven plugin module-maven-plugin project</name>
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
     <url>https://github.com/graybytes/module-maven-plugin</url>
@@ -149,6 +150,22 @@
                     </dependency>
                 </dependencies>
             </plugin>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-gpg-plugin</artifactId>
+		    <version>1.5</version>
+		<configuration>
+		</configuration>
+		    <executions>
+			<execution>
+			    <id>sign-artifacts</id>
+			    <phase>verify</phase>
+			     <goals>
+				 <goal>sign</goal>
+			     </goals>
+			</execution>
+		    </executions>
+	     </plugin>
         </plugins>
     </build>
 
