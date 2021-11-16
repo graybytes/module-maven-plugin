@@ -35,7 +35,7 @@
     <repository>
       <id>ossrh-release</id>
       <name>Central Repository OSSRH</name>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>https://s01.oss.sonatype.org/content/groups/staging/</url>
     </repository>  
   </distributionManagement>
     
