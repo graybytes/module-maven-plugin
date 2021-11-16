@@ -29,13 +29,13 @@
     
     <distributionManagement>
      <snapshotRepository>
-	   <id>ossrh-snapshots</id>
+	   <id>ossrh</id>
 	   <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
 	</snapshotRepository>
     <repository>
-      <id>ossrh-release</id>
+      <id>ossrh</id>
       <name>Central Repository OSSRH</name>
-      <url>https://s01.oss.sonatype.org/content/groups/staging/</url>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>  
   </distributionManagement>
     
