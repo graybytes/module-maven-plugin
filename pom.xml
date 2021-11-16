@@ -4,7 +4,7 @@
     <groupId>io.github.graybytes</groupId>
     <artifactId>module-maven-plugin</artifactId>
     <name>module-maven-plugin project</name>
-    <name>Maven plugin module-maven-plugin project</name>
+    <description>Maven plugin module-maven-plugin project</description>
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
     <url>https://github.com/graybytes/module-maven-plugin</url>
