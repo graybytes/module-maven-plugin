@@ -191,6 +191,7 @@
 				  <gpgArguments>
 				    <gpgArgument>--no-use-agent</gpgArgument>
 				    <gpgArgument>loopback</gpgArgument>
+				    <gpgArgument>--no-tty</gpgArgument>
 				  </gpgArguments>
 				</configuration>
 		  </execution>
