@@ -189,7 +189,7 @@
 		      </goals>
 			  <configuration>
 				  <gpgArguments>
-				    <gpgArgument>--use-agent</gpgArgument>
+				    <gpgArgument>--no-use-agent</gpgArgument>
 				    <gpgArgument>loopback</gpgArgument>
 				  </gpgArguments>
 				</configuration>
