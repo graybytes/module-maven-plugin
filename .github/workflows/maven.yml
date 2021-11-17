@@ -41,7 +41,6 @@ jobs:
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
     - name: Install gpg secret key | Build and deploy
       run: |
-         
            echo -n "${{secrets.GPG_KEY}}" | base64 --decode | gpg --import
            gpg --list-secret-keys --keyid-format LONG 
            mvn -B verify deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}}
