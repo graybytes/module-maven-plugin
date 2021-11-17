@@ -41,8 +41,15 @@ jobs:
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
     - name: Install gpg secret key | Build and deploy
       run: |
-          mvn clean package gpg:sign -Dgpg.passphrase=graybytespluginphrase49$
-          env:
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          - id: publish-to-central
+    - name: Publish to Central Repository
+      env: 
+       MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+       MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+       GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      run: |
+       mvn \
+       --no-transfer-progress \
+       --batch-mode \
+       -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} \
+       clean deploy
