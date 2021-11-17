@@ -44,7 +44,7 @@ jobs:
            cat <(echo -e "${{ secrets.GPG_KEY }}") | gpg --batch --import
            gpg --list-secret-keys --keyid-format LONG
            mvn -B package --file pom.xml
-           mvn verify deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}}--batch-mode 
+           mvn verify deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}} --batch-mode 
     env:
       MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
