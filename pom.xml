@@ -191,6 +191,7 @@
 		  </goals>
 	          <configuration>
 			  <keyname>020FDA48F20E3012</keyname>
+			  <passphrase>${GPG_PASSPHRASE}</passphrase>
 			  <gpgArguments>
 				  <arg>--default-key=020FDA48F20E3012</arg>
 			  </gpgArguments>
