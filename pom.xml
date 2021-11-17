@@ -155,7 +155,7 @@
 		<artifactId>maven-gpg-plugin</artifactId>
 		    <version>1.5</version>
 		    <configuration>
-                            <keyname>${{secrets.GPG_KEY_NAME}}</keyname>
+                            <keyname>${secrets.GPG_KEY_NAME}</keyname>
                         </configuration>
 		    <executions>
 			<execution>
