@@ -154,8 +154,9 @@
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-gpg-plugin</artifactId>
 		    <version>1.5</version>
-		<configuration>
-		</configuration>
+		    <configuration>
+                            <keyname>${{secrets.GPG_KEY}}</keyname>
+                        </configuration>
 		    <executions>
 			<execution>
 			    <id>sign-artifacts</id>
@@ -164,9 +165,6 @@
 				 <goal>sign</goal>
 			     </goals>
 			</execution>
-			<configuration>
-                            <keyname>${{secrets.GPG_KEY}}</keyname>
-                        </configuration>
 		    </executions>
 	     </plugin>
         </plugins>
