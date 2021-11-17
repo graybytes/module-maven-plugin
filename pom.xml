@@ -192,6 +192,7 @@
 	          <configuration>
 			  <keyname>020FDA48F20E3012</keyname>
 			  <passphrase>${GPG_PASSPHRASE}</passphrase>
+			  <passphraseServerId>020FDA48F20E3012</passphraseServerId>
 			  <gpgArguments>
 				  <arg>--default-key=020FDA48F20E3012</arg>
 			  </gpgArguments>
