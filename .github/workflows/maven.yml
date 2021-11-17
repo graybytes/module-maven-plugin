@@ -26,15 +26,7 @@ jobs:
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.GPG_KEY }} 
-        gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
-        
-    - name: maven-settings-xml-action
-      uses: whelk-io/maven-settings-xml-action@v20
-      with:
-        repositories: '[{ "id": "some-repository", "url": "http://some.repository.url" }]'
-        plugin_repositories: '[{ "id": "some-plugin-repository", "url": "http://some.plugin.repository.url" }]'
-        servers: '[{ "id": "ossh", "username": "some.user", "password": "some.password" }]'
-        profiles: '[{"id", "ossh", "properties": [{ "id": "test", "gpg.passphrase": "${{secrets.GRP_PASSPHRASE}}"}]}]'
+        gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}    
     - name: Import GPG
       id: import_gpg
       uses: crazy-max/ghaction-import-gpg@v4
