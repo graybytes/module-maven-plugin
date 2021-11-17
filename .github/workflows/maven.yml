@@ -39,14 +39,12 @@ jobs:
           echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
           echo "name:        ${{ steps.import_gpg.outputs.name }}"
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
-    - name: Install gpg secret key
+    - name: Install gpg secret key | Build and deploy
       run: |
            cat <(echo -e "${{ secrets.GPG_KEY }}") | gpg --batch --import
            gpg --list-secret-keys --keyid-format LONG
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: Publish package
-      run: mvn clean deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} --batch-mode 
+           mvn -B package --file pom.xml
+           mvn clean deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} --batch-mode 
     env:
       MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
