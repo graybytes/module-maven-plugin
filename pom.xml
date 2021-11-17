@@ -191,9 +191,11 @@
 		      </goals>
 			  <configuration>
 				  <gpgArguments>
-				    <gpgArgument>--batch</gpgArgument>	  
+				    <gpgArgument>--batch</gpgArgument>	 
+				    <gpgArgument>--yes</gpgArgument>
 				    <gpgArgument>loopback</gpgArgument>
 				    <gpgArgument>--no-tty</gpgArgument>
+			
 				  </gpgArguments>
 				</configuration>
 		  </execution>
