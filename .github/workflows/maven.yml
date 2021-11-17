@@ -41,7 +41,7 @@ jobs:
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
     - name: decrypt secrets
       run: | 
-        gpg --no-tty --batch --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --output secrets.env --decrypt secrets.env     
+         command: gpg --no-tty --batch --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --output secrets.env --decrypt secrets.env.gpg
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Publish package
