@@ -25,10 +25,10 @@ jobs:
         server-id: ossrh
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
+        gpg-private-key: ${{ secrets.MAVEN_GPG_key }} 
+        gpg-passphrase: GPG_PASSPHRASE 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: GPG sign verify
-      run: mvn verify -Dgpg.passphrase=GPG_PASSPHRASE
     - name: Publish package
       run: mvn --batch-mode deploy
     env:
