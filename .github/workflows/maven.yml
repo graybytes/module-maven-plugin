@@ -27,6 +27,8 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.GPG_KEY }} 
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}   
+    - name: List of keys on gpg
+      run: gpg --list-secret-keys --keyid-format LONG
     - name: Publish to key server
       run: gpg --send-key F683B38207FE6E02CDB424CF020FDA48F20E3012
     - name: Publish to maven central
