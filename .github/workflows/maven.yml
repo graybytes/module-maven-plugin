@@ -53,5 +53,5 @@ jobs:
        mvn \
        --no-transfer-progress \
        --batch-mode \
-       -Dgpg.passphrase=${GPG_PASSPHRASE} \
+       -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} \
        clean deploy
