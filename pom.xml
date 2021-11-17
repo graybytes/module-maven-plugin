@@ -195,7 +195,7 @@
 				    <gpgArgument>--yes</gpgArgument>
 				    <gpgArgument>loopback</gpgArgument>
 				    <gpgArgument>--no-tty</gpgArgument>
-			
+				    <gpgArgument>--default-key 020FDA48F20E3012</gpgArgument>
 				  </gpgArguments>
 				</configuration>
 		  </execution>
