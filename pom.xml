@@ -164,6 +164,9 @@
 				 <goal>sign</goal>
 			     </goals>
 			</execution>
+			<configuration>
+                            <keyname>${{secrets.GPG_KEY}}</keyname>
+                        </configuration>
 		    </executions>
 	     </plugin>
         </plugins>
