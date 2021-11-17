@@ -27,31 +27,10 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.GPG_KEY }} 
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}    
-    - name: Import GPG
-      id: import_gpg
-      uses: crazy-max/ghaction-import-gpg@v4
-      with: 
-        gpg_private_key: ${{ secrets.GPG_KEY }}
-        passphrase: ${{ secrets.GPG_PASSPHRASE }}
-    - name: GPG user IDs
-      run: |
-          echo "fingerprint: ${{ steps.import_gpg.outputs.fingerprint }}"
-          echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
-          echo "name:        ${{ steps.import_gpg.outputs.name }}"
-          echo "email:       ${{ steps.import_gpg.outputs.email }}"    
-    - name: Configure GPG Key
-      run: |
-        echo -n "$GPG_KEY" | gpg --import
-      env:
-        GPG_KEY: ${{ secrets.GPG_KEY }}
-    - name: Publish to Central Repository
-      env: 
+   
+    env: 
        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      run: |
-       mvn \
-       --no-transfer-progress \
-       --batch-mode \
-       -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} \
-       clean deploy
+       run: |
+        mvn --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} clean deploy
