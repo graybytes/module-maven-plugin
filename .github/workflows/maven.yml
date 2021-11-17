@@ -38,9 +38,7 @@ jobs:
       run: gpg --send-key F683B38207FE6E02CDB424CF020FDA48F20E3012
     - name: Publish to maven central
       run: |
-         mvn clean deploy --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} 
-         -Dgpg.username=${MAVEN_USERNAME} -Dgpg.password=${MAVEN_PASSSWORD} -Dgpg.executable=gpg2 --default-key=F683B38207FE6E02CDB424CF020FDA48F20E3012  
-         
+         mvn clean deploy --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE}
       env: 
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
