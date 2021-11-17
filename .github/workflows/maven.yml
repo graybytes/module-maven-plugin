@@ -39,11 +39,9 @@ jobs:
           echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
           echo "name:        ${{ steps.import_gpg.outputs.name }}"
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
-    - name: Configure GPG Key
-      run: |
-       gpg --import "$GPG_SECRET_KEY"
-      env:
-         GPG_SECRET_KEY: ${{ secrets.GPG_KEY }}      
+    - name: decrypt secrets
+      run: | 
+        gpg --no-tty --batch --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --output secrets.env --decrypt secrets.env.gpg     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Publish package
