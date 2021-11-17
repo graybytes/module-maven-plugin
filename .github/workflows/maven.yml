@@ -42,8 +42,8 @@ jobs:
     - name: Install gpg secret key | Build and deploy
       run: |
            cat <(echo -e "${{ secrets.GPG_KEY }}") | gpg --batch --import
-           gpg --list-secret-keys --keyid-format LONG
-           export GPG_TTY=$(tty) 
+           gpg --list-secret-keys --keyid-format LONG 
+           gpg --batch --import ~/.gnupg/private.key
            mvn -B verify package --file pom.xml -Dgpg.passphrase=${GPG_PASSPHRASE} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}} 
            mvn clean deploy
     env:
