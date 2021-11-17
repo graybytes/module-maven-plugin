@@ -27,10 +27,6 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.GPG_KEY }} 
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}    
-    - name: Setup Maven
-      uses: byu-oit/github-action-setup-maven@v1
-      with:
-        maven-master-password: ${{ secrets.MVN_MASTER_PASSWORD }}
     - name: Publish to maven central
       run: |
          mvn --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} -Darguments=-Dgpg.username=${MAVEN_USERNAME} -Darguments=-Dgpg.password=${MAVEN_TOKEN} clean deploy
