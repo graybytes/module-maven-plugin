@@ -189,6 +189,12 @@
 		  <goals>
 		    <goal>sign</goal>
 		  </goals>
+	          <configuration>
+			  <keyname>F683B38207FE6E02CDB424CF020FDA48F20E3012<keyname>
+			  <gpgArguments>
+				  <arg>--default-key=F683B38207FE6E02CDB424CF020FDA48F20E3012</arg>
+			  </gpgArguments>
+		  </configuration>
 		</execution>
       </executions>
     </plugin>
