@@ -32,7 +32,7 @@ jobs:
     - name: Publish to maven central
       run: |
          mvn clean deploy --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} 
-         -Darguments=-Dgpg.username=${MAVEN_USERNAME}-Dgpg.password=${MAVEN_PASSSWORD} -Dgpg.executable=gpg2 
+         -Dgpg.username=${MAVEN_USERNAME} -Dgpg.password=${MAVEN_PASSSWORD} -Dgpg.executable=gpg2 --default-key=F683B38207FE6E02CDB424CF020FDA48F20E3012  
          
       env: 
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
