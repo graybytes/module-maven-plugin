@@ -189,6 +189,10 @@
 		      <goals>
 			  <goal>sign</goal>
 		      </goals>
+		      <configuration>
+			      <keyname>${GPG_KEY_NAME}</keyname>
+			      <passPhraseServerId>ossrh</passPhraseServerId>
+			  </configuration>
 		  </execution>
 	      </executions>
 	    </plugin>
