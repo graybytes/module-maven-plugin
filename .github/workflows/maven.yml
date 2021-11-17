@@ -41,12 +41,10 @@ jobs:
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
     - name: Install gpg secret key | Build and deploy
       run: |
-           #cat <(echo -e "${{ secrets.GPG_KEY }}") | base64 --decode | gpg --batch --import
+         
            echo -n "${{secrets.GPG_KEY}}" | base64 --decode | gpg --import
            gpg --list-secret-keys --keyid-format LONG 
-           #gpg --allow-secret-key-import --import "${{ secrets.GPG_KEY }}"
-           mvn -B verify package --file pom.xml -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}} 
-           mvn clean deploy
+           mvn -B verify deploy -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}}
     env:
       MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
