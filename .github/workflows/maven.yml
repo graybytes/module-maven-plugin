@@ -27,8 +27,11 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.GPG_KEY }} 
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}   
-    - name: Import gpg key
-      run: gpg --import $${secrets.GPG_KEY}}
+    - name: Import GPG Key
+      uses: crazy-max/ghaction-import-gpg@v1
+      env:
+         GPG_PRIVATE_KEY: ${{ secrets.GPG_KEY }}
+         PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
     - name: List of keys on gpg
       run: gpg --list-secret-keys --keyid-format LONG
     - name: Publish to key server
