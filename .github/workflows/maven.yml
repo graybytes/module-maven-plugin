@@ -39,6 +39,13 @@ jobs:
           echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
           echo "name:        ${{ steps.import_gpg.outputs.name }}"
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
+    - name: Configure GPG Key
+      run: |
+       mkdir -p ~/.gnupg/
+       printf "$GPG_SECRET_KEY" | base64 --decode > ~/.gnupg/private.key
+       gpg --import ~/.gnupg/private.key
+      env:
+         GPG_SECRET_KEY: ${{ secrets.GPG_KEY }}      
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Publish package
