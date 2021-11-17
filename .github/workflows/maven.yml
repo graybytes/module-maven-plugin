@@ -29,7 +29,9 @@ jobs:
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}    
     - name: Publish to maven central
       run: |
-         mvn sign:sign --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} -Darguments=-Dgpg.username=${MAVEN_USERNAME} -Darguments=-Dgpg.password=${MAVEN_PASSSWORD} clean deploy
+         mvn --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} 
+         -Darguments=-Dgpg.username=${MAVEN_USERNAME}-Dgpg.password=${MAVEN_PASSSWORD} -Dgpg.executable=gpg2 
+         clean deploy 
       env: 
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
