@@ -190,11 +190,11 @@
 		    <goal>sign</goal>
 		  </goals>
 	          <configuration>
-			  <keyname>020FDA48F20E3012</keyname>
+			  <keyname>${GPG_KEY_NAME}</keyname>
 			  <passphrase>${GPG_PASSPHRASE}</passphrase>
-			  <passphraseServerId>020FDA48F20E3012</passphraseServerId>
+			  <passphraseServerId>${GPG_KEY_NAME}</passphraseServerId>
 			  <gpgArguments>
-				  <arg>--default-key=020FDA48F20E3012</arg>
+				  <arg>--default-key=${GPG_KEY_NAME}</arg>
 			  </gpgArguments>
 		  </configuration>
 		</execution>
