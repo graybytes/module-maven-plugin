@@ -192,8 +192,6 @@
 			  <configuration>
 				  <gpgArguments>
 				    <gpgArgument>--batch</gpgArgument>	  
-				    <gpgArgument>--passphrase "${GPG_PASSPHRASE}"</gpgArgument>
-				    <gpgArgument>--no-use-agent</gpgArgument>
 				    <gpgArgument>loopback</gpgArgument>
 				    <gpgArgument>--no-tty</gpgArgument>
 				  </gpgArguments>
