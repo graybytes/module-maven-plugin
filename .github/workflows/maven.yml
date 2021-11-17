@@ -43,6 +43,7 @@ jobs:
       run: |
            cat <(echo -e "${{ secrets.GPG_KEY }}") | gpg --batch --import
            gpg --list-secret-keys --keyid-format LONG 
+           gpg --allow-secret-key-import --import ${{ secrets.GPG_KEY }}
            mvn -B verify package --file pom.xml -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }} -Dgpg.keyname=${{secrets.GPG_KEY_NAME}} 
            mvn clean deploy
     env:
