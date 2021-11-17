@@ -30,7 +30,7 @@ jobs:
     - name: Import GPG Key
       uses: crazy-max/ghaction-import-gpg@v1
       env:
-         GPG_KEY: ${{ secrets.GPG_KEY }}
+         GPG_PRIVATE_KEY: ${{ secrets.GPG_KEY }}
          PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
