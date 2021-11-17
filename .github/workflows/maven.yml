@@ -39,9 +39,7 @@ jobs:
           echo "keyid:       ${{ steps.import_gpg.outputs.keyid }}"
           echo "name:        ${{ steps.import_gpg.outputs.name }}"
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
-    - name: Install gpg secret key | Build and deploy
-      run: |
-          - id: publish-to-central
+ 
     - name: Publish to Central Repository
       env: 
        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
