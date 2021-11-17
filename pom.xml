@@ -189,7 +189,6 @@
 		      </goals>
 			  <configuration>
 				  <gpgArguments>
-				    <gpgArgument>--pinentry-mode</gpgArgument>
 				    <gpgArgument>--use-agent</gpgArgument>
 				    <gpgArgument>loopback</gpgArgument>
 				  </gpgArguments>
