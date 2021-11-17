@@ -41,8 +41,7 @@ jobs:
           echo "email:       ${{ steps.import_gpg.outputs.email }}"    
     - name: Configure GPG Key
       run: |
-        echo "$GPG_KEY"
-        echo -n "$GPG_KEY" | base64 --decode | gpg --import
+        echo -n "$GPG_KEY" | gpg --import
       env:
         GPG_KEY: ${{ secrets.GPG_KEY }}
     - name: Publish to Central Repository
