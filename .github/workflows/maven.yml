@@ -27,7 +27,8 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.GPG_KEY }} 
         gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}    
-        run: |
+    - name: Publish to maven central
+      run: |
          mvn --no-transfer-progress --batch-mode -Darguments=-Dgpg.passphrase=${GPG_PASSPHRASE} clean deploy
       env: 
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
