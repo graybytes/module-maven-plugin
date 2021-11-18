@@ -54,5 +54,5 @@ plugins count: 6
 2. Once approved and reviewed the PR will be merged. 
 3. Feedback and input as issues or enhancements are always welcome
 
-##Contributors
-Tom Conder
+## Contributors:
+Tom Conder https://github.com/tomconder/tomconder
