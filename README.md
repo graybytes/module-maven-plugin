@@ -55,4 +55,4 @@ plugins count: 6
 3. Feedback and input as issues or enhancements are always welcome
 
 ## Contributors:
-Tom Conder https://github.com/tomconder/tomconder
+Tom Conder @ https://github.com/tomconder
