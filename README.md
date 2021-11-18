@@ -48,6 +48,8 @@ plugins count: 6
 [INFO] 		|-name: org.springframework.boot:spring-boot-dependencies@2.5.6
 [INFO] ------------------------------------------------------------------------
 ```
+## License
+Apache 2.0
 
 ## Contributions: 
 1. Fork the repo and create a pull request. 
