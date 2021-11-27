@@ -32,6 +32,8 @@ jobs:
     #  env:
     #     GPG_PRIVATE_KEY: ${{ secrets.GPG_KEY }}
     #     PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+    - name: Import GPG key
+      run: gpg --allow-secret-key-import --import ${{ secrets.GPG_KEY}}
     - name: List of keys on gpg
       run: gpg --list-secret-keys --keyid-format LONG
     - name: Publish to key server
