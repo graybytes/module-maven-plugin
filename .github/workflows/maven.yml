@@ -34,6 +34,7 @@ jobs:
     #     PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
     - name: Configure GPG Key
       run: |
+          export GPG_TTY=$(tty)
           echo -n "$GPG_SIGNING_KEY" | gpg --import
       env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_KEY }}
