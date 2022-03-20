@@ -52,7 +52,7 @@ plugins count: 6
 Apache 2.0
 
 ## Chat on the plugin 
-https://join.slack.com/t/graybytesmodu-wsa3128/shared_invite/zt-15upi6hup-CNbmeA3yu8wcONmf6mWauA
+[Slack channel](https://join.slack.com/t/graybytesmodu-wsa3128/shared_invite/zt-15upi6hup-CNbmeA3yu8wcONmf6mWauA) 
 
 ## Contributions: 
 1. Fork the repo and create a pull request. 
