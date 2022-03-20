@@ -53,7 +53,7 @@ Apache 2.0
 
 ## Chat on the plugin 
 [Slack channel](https://join.slack.com/t/graybytesmodu-wsa3128/shared_invite/zt-15upi6hup-CNbmeA3yu8wcONmf6mWauA) 
-Or somayajulaas@gmail.com
+Or email: somayajulaas@gmail.com
 
 ## Contributions: 
 1. Fork the repo and create a pull request. 
